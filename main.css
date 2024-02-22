@@ -1,14 +1,12 @@
 *{
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
 }
 
-header{
-    padding: 16px 0 0;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 56px;
+body{
+    background-color: rgb(205, 237, 205);
 }
 
 .container{
@@ -17,185 +15,160 @@ header{
     margin: 0 auto;
 }
 
+h1{
+    font-style: italic;
+    color: #fff
+}
+
+header{
+    background-color: rgb(65, 131, 65);
+}
+
 header .container{
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.menu > li{
-    list-style: none;
-    float: left;
     padding: 16px;
-    border-top: 4px solid transparent;
-    position: relative;
 }
 
-.sub-menu{
-    display: none;
-    background-color: #fff;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 300px;
-    border: 1px solid red;
+.menu li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 16px;
 }
 
-.clear-both{
-    clear: both;
+.menu li a{
+    color: #fff;
+    text-decoration: none;
 }
 
-.menu li:hover .sub-menu{
-    display: block;
-}   
-
-.menu li:hover{
-    border-color: red;
-}
-
-.sub-menu li{
-    display: block;
-    padding: 8px;
-}
-
-.conteudo{
-    display: grid;
-    grid-template-columns: 70% 30%;
-}
-
-.noticia img{
-    max-width: 100%;
-}
-
-.destaque{
-    margin-bottom: 56px;
-}
-
-.destaque .noticia a{
+.sobre-a-loja article{
     display: flex;
-    font-size: 2em;
+    margin-top: 32px;
 }
 
-.destaque img{
-    margin-right: 8px;
+.sobre-a-loja img{
+    margin-right: 32px;
+    width: 100%;
 }
 
-section h2{
-    margin-bottom: 32px;
+.sobre-a-loja h2,
+.produtos > h2 {
+    border-bottom: 2.5px solid rgb(65, 131, 65);
+    padding-bottom: 24px;
+    margin-bottom: 40px;
+    font-style: italic;
+    color: rgb(65, 131, 65);
 }
 
-aside{
-    padding: 40px;
+.produtos{
+    margin-top: 32px;
 }
 
-aside .noticia{
-    margin-bottom: 24px;
-}
-
-.noticias{
+.item{
     display: grid;
-    grid-template-columns: repeat(3, 32.6%);
-    column-gap: 1%;
-    row-gap: 5%;
+    grid-template-columns: repeat(4, 23.13%);
+    column-gap: 2.5%;
 }
 
-@media screen and (max-width: 767px) {
+.item img{
+    width: 100%;
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+ .item h2{
+    cursor: pointer;
+ }
 
-      .container{
-        max-width: 90%;
-    }
+.item p{
+    margin: 16px 0;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: rgb(65, 131, 65);
+}
 
-    .container h1{
-        margin-bottom: 4px;
+.item button{
+    width: 100%;
+    padding: 6px;
+    border-radius: 4px;
+    background-color: rgb(65, 131, 65);
+    color: #fff;
+    border: none;
+    cursor: url("./Images/cursor_ingredientes.png"), pointer;
+}
+
+footer{
+    margin-top: 16px;
+    background-color: rgb(65, 131, 65);
+    padding: 16px;
+}
+
+footer p{
+    text-align: center;
+    color: #fff;
+}
+
+@media screen and (max-width: 641px) {    
+    .container{
+        max-width: 80%;
     }
     
-    .conteudo{
-        display: block;
+    .sobre-a-loja p{
+        font-size: 1.2em;
     }
-         
-    .destaque .noticia a{
-        font-size: 1.5em;
-        display: block;
-    }
-    
-    .destaque .noticia img{
-        margin-right: 0;
-    }
-    
-    .noticias{
+
+    .sobre-a-loja article{
         display: block;
     }
 
-    .noticias .noticia{
-        margin-bottom: 32px;
+    .sobre-a-loja h2,
+    .produtos > h2 {
+    margin-top: 16px;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
     }
 
-    .noticia{
+    .item{
+    display: block;
+    }
+    
+    .item article{
         margin-bottom: 16px;
     }
 
-    aside{
-        padding-left: 0;
-    }
-      
-    header div.container{
-        flex-direction: column;
-    }
-
-    .menu{
-        display: none;
-    }
-    
-    .menu > li{
-        clear: both;
-    }
-    
-    .sub-menu{
-        display: block;
-        width: 100%;
-        position: relative;
-        border: none;
-    }
-           
-    .sub-menu li{
-        display: block;
-        padding: 8px;
-    }
-
-    .botao-menu{
-        display: flex;
-        justify-content: center;
-        margin-top: 16px;
-        padding-bottom: 16px;
-    }
-
-    .botao-menu button{
-        padding: 8px;
+    .item img{
+        margin-bottom: 24px;
     }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 642px) and (max-width: 1023px) {
     .container{
-        max-width: 90%;
+        max-width: 80%;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .sobre-a-loja article{
+        display: block;
+        margin-top: 32px;
     }
 
-.botao-menu{
-    display: none;
-}
-
-.destaque .noticia a{
-    font-size: 1.5em;
-}
-
-.noticias{
-    grid-template-columns: repeat(2, 49%);
-}
-
-}
-
-@media screen and (min-width: 1024px){
-    .botao-menu{
-        display: none;
+    .sobre-a-loja h2{
+        margin-top: 24px;
     }
+
+    .item{
+        display: grid;
+        grid-template-columns: repeat(2, 48.75%);
+        column-gap: 2.5%;
+    }   
+
+    .item button{
+        margin-bottom: 16px;
+    }
+    
 }
+
+
 
